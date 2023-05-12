@@ -1,3 +1,4 @@
 ﻿  Lab4P3_JoedSosa.cpp
-C:\Users\joeds\OneDrive\Escritorio\Progra III\CPP_3_12211012\Lab4P3_JoedSosa\Lab4P3_JoedSosa.cpp(43,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\joeds\OneDrive\Escritorio\Progra III\CPP_3_12211012\Lab4P3_JoedSosa\Lab4P3_JoedSosa.cpp(65,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\joeds\OneDrive\Escritorio\Progra III\CPP_3_12211012\Lab4P3_JoedSosa\Lab4P3_JoedSosa.cpp(91,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Lab4P3_JoedSosa.vcxproj -> C:\Users\joeds\OneDrive\Escritorio\Progra III\CPP_3_12211012\Lab4P3_JoedSosa\x64\Debug\Lab4P3_JoedSosa.exe

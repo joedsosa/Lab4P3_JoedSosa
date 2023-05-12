@@ -2,6 +2,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <vector>
 // recibe la cadena y el caractares luego la recorre para ver cuantas letras hay en la cadena
 int num_repeticiones(string cadena, char letra) {
     int cont = 0;
@@ -18,13 +19,13 @@ string sequence(string cadena) {
     string largeseq;
     int cont = 1;
     int largecont = 1;
-    for (int i = 0; i < cadena.length(); i++){
+    for (int i = 0; i < cadena.length(); i++) {
         if (cadena[i] == cadena[i - 1]) {
             cont++;
             sequence += cadena[i];
         }
         else {
-            if (cont > largecont)  {
+            if (cont > largecont) {
                 largecont = cont;
                 largeseq = sequence;
             }
@@ -34,6 +35,53 @@ string sequence(string cadena) {
     }
     return sequence;
 }
+    int fact(int num){
+        if (num <= 1) {
+            return 1;
+        }
+        else {
+            return num * fact(num - 1);
+        }
+    }
+
+    void Permutaciones() {
+        string palabra;
+        cout << "Ingrese palabra para calcular permutaciones: ";
+        cin >> palabra;
+        if (palabra.size() < 6) {
+            cout << "La palabra debe tener al menos 6 caracteres. " << endl;
+        }
+        cout << "Letras que se repiten: " << endl;
+        vector<bool> contletras(palabra.size(), false);
+        for (int i = 0; i < palabra.size(); i++) {
+            if (!contletras[i]) {
+                int reps = num_repeticiones(palabra, palabra[i]);
+                contletras[i] = true;
+                if (reps > 1) {
+                    cout << palabra[i] << ": " << reps << "veces" << endl;
+                }
+            }
+        }
+        int n = palabra.size();
+        int* r = new int[palabra.size()];
+        int k = 0;
+        for (int i = 0; i < n; i++) {
+            if (!contletras[i]) {
+                int reps = num_repeticiones(palabra, palabra[i]);
+                contletras[i] = true;
+                r[k] = reps;
+                k++;
+            }
+        }
+        int numerador = fact(n);
+        int denominador = 1;
+        for (int i = 0; i < k; i++){
+            denominador *= fact(r[i]);
+        }
+        int permutaciones = numerador / denominador;
+        cout << "Numero de permutaciones de la palabra " << palabra << ": " << permutaciones << endl;
+
+    }
 // Solicita toda la informacion necesaria al usuario para luego poner a prueba el ejercicio
 void nucleotidos(){
     string cadena;
@@ -118,7 +166,7 @@ int main() {
         nucleotidos();
     }
     else {
-       
+       Permutaciones();
     }
 
     return 0;
