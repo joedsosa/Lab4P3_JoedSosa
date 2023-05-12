@@ -143,16 +143,16 @@ int menu() {
     int opcion;
 
     
-    cout << "Seleccione una opción:\n";
-    cout << "1. Ejercicio 1\n";
-    cout << "2. Ejercicio 2\n";
+    cout << "Seleccione una opcion:\n";
+    cout << "1. Ejercicio 1: Permutaciones con repeticion \n";
+    cout << "2. Ejercicio 2: Analisis de ADN\n";
     
     
-    cout << "Ingrese su opción: ";
+    cout << "Ingrese su opcion: ";
     cin >> opcion;
 
     while (opcion != 1 && opcion != 2) {
-        cout << "Opción inválida. Ingrese 1 o 2: ";
+        cout << "Opcion invalida. Ingrese 1 o 2: ";
         cin >> opcion;
     }
 
@@ -163,10 +163,11 @@ int main() {
     int opcion = menu();
 
     if (opcion == 1) {
-        nucleotidos();
+        Permutaciones();
     }
     else {
-       Permutaciones();
+        nucleotidos();
+       
     }
 
     return 0;
